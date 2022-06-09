@@ -9,7 +9,6 @@ export default async function(args: ArgumentsCamelCase<PickArguments>) {
     const content = await readFile(path.resolve(input), 'utf8')
     const colorJSON = JSON.parse(content)
     const ans = parseColors(colorJSON, alpha)
-    logger.info(JSON.stringify(ans, null, 2))
     await writeFile(path.resolve(output), JSON.stringify(ans, null, 2))
   }
   catch (error: any) {

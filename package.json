@@ -66,5 +66,8 @@
     "unbuild": "0.7.4",
     "vite": "2.9.9",
     "vitest": "0.14.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
