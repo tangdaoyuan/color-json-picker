@@ -28,6 +28,9 @@
     "dist",
     "*.d.ts"
   ],
+  "bin": {
+    "c-picker": "./bin/c-picker.js"
+  },
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
