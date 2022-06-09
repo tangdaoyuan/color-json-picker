@@ -80,3 +80,6 @@ dist
 *.lerna_backup
 
 .DS_Store
+
+# JSON OUTPUT
+output/

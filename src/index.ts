@@ -1,1 +1,1 @@
-export default 'color-json-picker'
+export * from './command/pick'
