@@ -37,7 +37,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "tsx ./src/index.ts",
+    "start": "tsx ./src/cli.ts",
     "stub": "unbuild --stub",
     "build": "unbuild",
     "prepublishOnly": "pnpm run build",
