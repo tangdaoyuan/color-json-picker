@@ -1,3 +1,3 @@
-# typescript-starter
-> 
-> My starter project for typescript.
+# pick colors from json file
+
+> Pick colors from json file.

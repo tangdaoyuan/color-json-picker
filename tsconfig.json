@@ -20,7 +20,7 @@
       "@/*": [
         "src/*"
       ],
-      "typescript-stater/*": [
+      "color-json-picker/*": [
         "dist/*"
       ]
     }

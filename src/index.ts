@@ -1,1 +1,1 @@
-export default 'typescript-stater'
+export default 'color-json-picker'
