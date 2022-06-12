@@ -29,12 +29,18 @@ yargs
         default: false,
         describe: 'classified by alpha',
       })
+      .option('color', {
+        alias: 'c',
+        type: 'boolean',
+        default: false,
+        describe: 'only inclues colors in output json',
+      })
       .demandOption(['input'], colors.yellow('\nPlease specify input file path\n'))
   },
   async(args) => {
     await pick(args)
   })
-  .example('$0 -i ./input.json', 'extract colors')
+  .example('$0 -i ./input.json', 'extract colors from json')
   .showHelpOnFail(true)
   .alias('h', 'help')
   .alias('v', 'version')

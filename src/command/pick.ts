@@ -4,11 +4,11 @@ import type { ArgumentsCamelCase } from 'yargs'
 import logger from '../logger'
 
 export default async function(args: ArgumentsCamelCase<PickArguments>) {
-  const { output, alpha, input } = args
+  const { output, alpha, input, color } = args
   try {
     const content = await readFile(path.resolve(input), 'utf8')
     const colorJSON = JSON.parse(content)
-    const ans = parseColors(colorJSON, alpha)
+    const ans = parseColors(colorJSON, alpha, color)
     await writeFile(path.resolve(output), JSON.stringify(ans, null, 2))
   }
   catch (error: any) {
@@ -16,7 +16,7 @@ export default async function(args: ArgumentsCamelCase<PickArguments>) {
   }
 }
 
-export function parseColors(colors: JSON, alpha = false) {
+export function parseColors(colors: JSON, alpha = false, onlyColor = false) {
   if (!colors)
     return {}
   const map = new Map<string, Set<string>>()
@@ -43,6 +43,9 @@ export function parseColors(colors: JSON, alpha = false) {
   }
   recursive(colors)
 
+  if (onlyColor)
+    return [...map.keys()]
+
   return Array
     .from(map.entries())
     .reduce((acc, [color, keys]) => {
@@ -55,6 +58,7 @@ export interface PickArguments {
   output: string
   alpha: boolean
   input: string
+  color: boolean
 }
 
 export interface JSON {

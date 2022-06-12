@@ -16,3 +16,17 @@ it('runs', () => {
     }
   `)
 })
+
+it('only color list', () => {
+  const colors = parseColors({
+    color1: '#601f02',
+    color2: '#000033',
+  }, false, true)
+  expect(colors).toBeDefined()
+  expect(colors).toMatchInlineSnapshot(`
+    [
+      "#601f02",
+      "#000033",
+    ]
+  `)
+})
