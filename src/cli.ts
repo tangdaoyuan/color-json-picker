@@ -15,32 +15,32 @@ yargs
       .option('input', {
         alias: 'i',
         type: 'string',
-        describe: 'single colors json file path',
+        describe: 'Colors file path (Supporting only json)',
       })
       .option('output', {
         alias: 'o',
         type: 'string',
         default: './output/output.json',
-        describe: 'output json file path',
+        describe: 'Output file path',
       })
       .option('alpha', {
         alias: 'a',
         type: 'boolean',
         default: false,
-        describe: 'classified by alpha',
+        describe: 'Including transparency (alpha)',
       })
       .option('color', {
         alias: 'c',
         type: 'boolean',
         default: false,
-        describe: 'only inclues colors in output json',
+        describe: 'Only inclues color value in output',
       })
       .demandOption(['input'], colors.yellow('\nPlease specify input file path\n'))
   },
   async(args) => {
     await pick(args)
   })
-  .example('$0 -i ./input.json', 'extract colors from json')
+  .example('$0 -i ./input.json', 'Extract colors from json')
   .showHelpOnFail(true)
   .alias('h', 'help')
   .alias('v', 'version')
